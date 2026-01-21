@@ -4,6 +4,7 @@ Just run this file and follow the prompts!
 """
 
 from google_maps_scraper_selenium import GoogleMapsScraper
+from csv_generator import save_clean_csv
 
 def main():
     print("=" * 70)
@@ -70,7 +71,7 @@ def main():
         csv_file = 'google_places.csv'
         json_file = 'google_places.json'
         
-        scraper.save_to_csv(csv_file)
+        save_clean_csv(scraper.all_places_data, 'google_places_clean.csv')
         scraper.save_to_json(json_file)
         
         print()
